@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { uploadFileToIPFS, uploadJSONToIPFS } from "../../configuration/pinata";
 // import { useLocation } from "react-router";
-// import NFTHub from "../../contracts/NFTHub.json";
+// import BlockVerse from "../../contracts/BlockVerse.json";
 import NH from "../../contracts/NH.json";
 // import { Utils } from "alchemy-sdk";
 import { useGlobalState } from "../../configuration/settings";

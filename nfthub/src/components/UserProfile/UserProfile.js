@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import NFTTile from "../MarketPlace/NFTTile";
-import NFTHub from "../../contracts/NFTHub.json";
+import BlockVerse from "../../contracts/NFTHub.json";
 import NH from "../../contracts/NH.json";
 import axios from "axios";
 import { useState
