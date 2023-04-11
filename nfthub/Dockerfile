@@ -1,16 +1,9 @@
-# FROM node:alpine
-# WORKDIR '/app'
-# COPY package.json .
-# RUN npm install
-# COPY . .
-# CMD ["npm", "start"]
-
-FROM node:16 AS ui-build
-WORKDIR "./app"
-COPY package.json .
-RUN npm install && npm run build
+FROM node:16.17 as build 
+WORKDIR /react-app
+COPY package*.json .
+RUN npm install
 COPY . .
-
-EXPOSE 3080
-
-CMD ["DISABLE_ESLINT_PLUGIN=true", "npm", "start"]
+RUN npm run build
+FROM nginx:1.19
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /react-app/build /usr/share/nginx/html
