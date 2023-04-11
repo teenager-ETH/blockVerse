@@ -1,4 +1,4 @@
-// import NFTHub from "../../contracts/NFTHub.json";
+// import BlockVerse from "../../contracts/BlockVerse.json";
 import NH from "../../contracts/NH.json";
 import { useParams } from "react-router-dom";
 import axios from "axios";
