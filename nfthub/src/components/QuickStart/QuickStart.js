@@ -12,12 +12,12 @@ const QuickStart = (props) => {
         <div className="container">
           <div className="row d-flex justify-content-center">
             <div className="col-md-3 quickContentLeft border border-white rounded m-3 pb-0">
-              <p className="nfthubtitle mt-3">📢 NFTHUB</p>
+              <p className="nfthubtitle mt-3">📢 BlockVerse</p>
               <hr />
               <img alt="img" className="imgleft centerimg" src={boredApeYatchBgLess}></img>
             </div>
             <div className="col-md-6 quickContentRight  border border-white rounded m-3">
-              <p className="nfthubtitle mt-3">👀 What is NFTHUB? </p>
+              <p className="nfthubtitle mt-3">👀 What is BlockVerse? </p>
               <hr/>
               <div className="m-3 contentRight">
                 <b>A multichain Defi Dashboard</b> which allows you to track
