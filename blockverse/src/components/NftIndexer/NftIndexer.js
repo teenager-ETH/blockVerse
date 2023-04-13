@@ -96,7 +96,7 @@ export default function NftIndexer() {
   return (
     <>
       <div className="container mt-4 middle">
-        <h3 className="justify-content-center text-center">NFT Indexer</h3>
+        <h3 className="justify-content-center text-center fs-2">NFT Indexer</h3>
         <div
           className="border border-white rounded p-4 form"
           style={{ width: "40rem" }}

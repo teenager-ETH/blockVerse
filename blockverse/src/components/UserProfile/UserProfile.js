@@ -68,7 +68,7 @@ export default function UserProfile () {
     return (
         <div className="container">
             <div className="mt-3 middle">
-                <h3 className="border border-secondary p-3 rounded">User Profile</h3>
+                <h3 className="border border-secondary p-3 rounded fs-2">User Profile</h3>
             </div>
             <div className="container row border border-info rounded p-3">
                 {loader}

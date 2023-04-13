@@ -76,6 +76,9 @@ const NavBar = (props) => {
                 <a className="dropdown-item" href="/swap">
                   🚀 Swap
                 </a>
+                <a className="dropdown-item" href="/ticket/create">
+                  🎫 NFT Ticket
+                </a>
                 <a className="dropdown-item" href="/transfers">
                   💸 Transfers
                 </a>

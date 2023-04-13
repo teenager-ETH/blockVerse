@@ -1,5 +1,5 @@
 html {
-  background: url('../public/assets/background-sober.jpg') no-repeat center center fixed;
+  background: url('../public/assets/19549381_SL-101619-24150-73.jpg') no-repeat center center fixed;
   /* background:url('../public/assets/giphy.gif') no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,6 +10,10 @@ html {
 
   /*   filter: blur(8px); */
   /*   -webkit-filter: blur(8px); */
+}
+
+.form-label{
+  color: white;
 }
 
 .App {
