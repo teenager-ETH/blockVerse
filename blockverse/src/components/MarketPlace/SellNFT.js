@@ -7,11 +7,14 @@ import NH from "../../contracts/NH.json";
 import { useGlobalState } from "../../configuration/settings";
 import toast, { Toaster } from "react-hot-toast";
 import './SellNFT.css'
+import { getDarkMode } from "../../configuration/misc";
 // import { useParams , useLocation } from "react-router-dom";
 // import axios from "axios";
 // import {CenterLoader as Loader} from "../Loader/LoaderDNA"
 
 export default function SellNFT() {
+  const darkMode = getDarkMode();
+
   const [currentAccountAddress] = useGlobalState("currentAccountAddress");
   const [formParams, updateFormParams] = useState({
     name: "",
@@ -183,7 +186,7 @@ export default function SellNFT() {
   }
 
   return (
-    <div className="container">
+    <div className={`container ${darkMode ? "" : "lightTheme"}`}>
       <div className="mt-3 middle">
         <h3 className="p-3 rounded">Mint NFT</h3>
       </div>
@@ -197,7 +200,7 @@ export default function SellNFT() {
                 NFT Name
               </label>
               <input
-                className="form-control"
+                className={`form-control ${darkMode ? "" : "lightThemeInput"}`}
                 id="name"
                 type="text"
                 placeholder="Axie#4563"
@@ -216,7 +219,7 @@ export default function SellNFT() {
                 NFT Description
               </label>
               <textarea
-                className="form-control"
+                className={`form-control ${darkMode ? "" : "lightThemeInput"}`}
                 cols="40"
                 rows="5"
                 id="description"
@@ -245,7 +248,7 @@ export default function SellNFT() {
                 Price (in ETH)
               </label>
               <input
-                className="form-control"
+                className={`form-control ${darkMode ? "" : "lightThemeInput"}`}
                 type="number"
                 placeholder="Min 0.01 ETH"
                 step="0.01"
@@ -258,7 +261,7 @@ export default function SellNFT() {
             <fieldset className="form-group mt-4 mb-3">
               <div className="form-check form-switch mb-3">
                 <input
-                  className="form-check-input"
+                  className={`form-check-input ${darkMode ? "" : "lightThemeInput"}`}
                   type="checkbox"
                   id="flexSwitchCheckDefault"
                   onChange={(e) =>
@@ -276,7 +279,7 @@ export default function SellNFT() {
 
               <div className="form-check form-switch mb-3">
                 <input
-                  className="form-check-input"
+                  className={`form-check-input ${darkMode ? "" : "lightThemeInput"}`}
                   type="checkbox"
                   id="flexSwitchCheckDefault1"
                   onChange={(e) =>
@@ -301,7 +304,7 @@ export default function SellNFT() {
                 <label className="form-label " htmlFor="toAddr">
                   To whom you want to transfer this NFT?
                 </label>
-                <input className="form-control" type="text" id="toAddr" onChange={(e) =>
+                <input className={`form-control ${darkMode ? "" : "lightThemeInput"}`} type="text" id="toAddr" onChange={(e) =>
                   updateFormParams({ ...formParams, to: e.target.value })
                 }
                   value={formParams.to} placeholder="If you want this NFT for you, then leave it blank.." />
@@ -311,7 +314,7 @@ export default function SellNFT() {
                   Upload Image
                 </label>
                 <input
-                  className="form-control"
+                  className={`form-control ${darkMode ? "" : "lightThemeInput"}`}
                   type={"file"}
                   onChange={OnChangeFile}
                 ></input>
