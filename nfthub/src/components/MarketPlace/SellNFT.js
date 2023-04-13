@@ -185,7 +185,7 @@ export default function SellNFT() {
   return (
     <div className="container">
       <div className="mt-3 middle">
-        <h3 className="p-3 rounded">Mint NFT For Sell</h3>
+        <h3 className="p-3 rounded">Mint NFT</h3>
       </div>
       <div className="border p-3 mt-3 border-white rounded m-auto MintDiv col-7 mb-4 form">
         <form>
