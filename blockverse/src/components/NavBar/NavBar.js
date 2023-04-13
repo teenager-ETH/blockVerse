@@ -95,8 +95,7 @@ const NavBar = (props) => {
               </div>
             </li>
           </ul>
-        </div>
-        <ul className="navbar-nav">
+          <ul className="navbar-nav">
           <li className="nav-item">
             <select className="form-select me-sm-2" id="chainSelection" onChange={changeChain}>
               <option value="MATIC_MUMBAI">MATIC_MUMBAI</option>
@@ -106,6 +105,8 @@ const NavBar = (props) => {
             </select>
           </li>
         </ul>
+        </div>
+        
         <ul className="navbar-nav">
           <li className="nav-item">
             {isLoggedin ? (

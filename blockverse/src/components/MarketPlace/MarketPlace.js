@@ -98,8 +98,8 @@ export default function MarketPlace() {
         </select>
       </div> */}
 
-      <div className="container">
-        <div className="d-flex row">
+      <div className="mx-3 overflow-hidden">
+        <div className="d-flex row ">
           {data.length === 1 ? <Loader /> : data.map((value, index) => {
             return <NFTTile data={value} key={index}></NFTTile>;
           })}
