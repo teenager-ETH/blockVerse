@@ -35,7 +35,7 @@ Get started now and unlock the limitless possibilities of BlockVerse! 💫🚀
 
 <hr>
 
-<br>
+
 
 # Tech Stack
 ![](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black)
@@ -45,7 +45,7 @@ Get started now and unlock the limitless possibilities of BlockVerse! 💫🚀
 ![](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 
-<br>
+
 
 <hr>
 
