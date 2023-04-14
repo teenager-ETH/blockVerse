@@ -19,6 +19,7 @@ import NFTPage from "./components/MarketPlace/NFTPage";
 import SellNFT from "./components/MarketPlace/SellNFT";
 import UserProfile from "./components/UserProfile/UserProfile";
 import TicketNft from "./components/TicketNft/TicketNft";
+import QRScan from "./components/ScanQR/QRScan";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
   {
     path: "/ticket/create",
     element: <TicketNft/>
+  },
+  {
+    path: "/scan",
+    element: <QRScan />
   }
 ]);
 
