@@ -7,7 +7,7 @@ import { truncAddr } from "../../configuration/misc";
 
 const NavBar = (props) => {
   const [connectEmoji, setconnectEmoji] = useState(
-    <button type="button" class="btn btn-danger btn-sm px-4">
+    <button type="button" className="btn btn-danger btn-sm px-4">
       🔌 Connect
     </button>
   );
