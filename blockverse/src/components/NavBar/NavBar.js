@@ -6,7 +6,11 @@ import { setAccount } from "../../configuration/settings";
 import { truncAddr } from "../../configuration/misc";
 
 const NavBar = (props) => {
-  const [connectEmoji, setconnectEmoji] = useState(<button type="button" class="btn btn-danger btn-sm px-4">🔌 Connect</button>);
+  const [connectEmoji, setconnectEmoji] = useState(
+    <button type="button" class="btn btn-danger btn-sm px-4">
+      🔌 Connect
+    </button>
+  );
   const [isLoggedin, setisLoggedin] = useState(false);
 
   const connect = () => {
@@ -20,15 +24,15 @@ const NavBar = (props) => {
     } else {
       alert("install metamask extension!!");
     }
-  }
+  };
 
   useEffect(() => {
     connect();
-    $("#chainSelection").val(localStorage.getItem("globalChain"))
+    $("#chainSelection").val(localStorage.getItem("globalChain"));
   }, []);
 
   function changeChain(e) {
-    console.log(e.target.value)
+    console.log(e.target.value);
     setChain(e.target.value);
   }
 
@@ -99,31 +103,34 @@ const NavBar = (props) => {
             </li>
           </ul>
           <ul className="navbar-nav">
-          <li className="nav-item">
-            <select className="form-select me-sm-2" id="chainSelection" onChange={changeChain}>
-              <option value="MATIC_MUMBAI">MATIC_MUMBAI</option>
-              <option value="MATIC_MAINNET">MATIC_MAINNET</option>
-              <option value="ETH_GOERLI">ETH_GOERLI</option>
-              <option value="ETH_MAINNET">ETH_MAINNET</option>
-            </select>
-          </li>
-        </ul>
+            <li className="nav-item">
+              <select
+                className="form-select me-sm-2"
+                id="chainSelection"
+                onChange={changeChain}
+              >
+                <option value="MATIC_MUMBAI">MATIC_MUMBAI</option>
+                <option value="MATIC_MAINNET">MATIC_MAINNET</option>
+                <option value="ETH_GOERLI">ETH_GOERLI</option>
+                <option value="ETH_MAINNET">ETH_MAINNET</option>
+              </select>
+            </li>
+          </ul>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              {isLoggedin ? (
+                <a className="nav-link connectEmoji" href="/user">
+                  {connectEmoji}
+                </a>
+              ) : (
+                <a className="nav-link connectEmoji" onClick={connect}>
+                  {connectEmoji}
+                </a>
+              )}
+            </li>
+          </ul>
         </div>
-        
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            {isLoggedin ? (
-              <a className="nav-link connectEmoji" href="/user">
-                {connectEmoji}
-              </a>
-            ) : (
-              <a className="nav-link connectEmoji" onClick={connect}>
-                {connectEmoji}
-              </a>
-            )}
 
-          </li>
-        </ul>
         <button
           className="navbar-toggler"
           type="button"
@@ -142,4 +149,3 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
-

@@ -33,7 +33,17 @@ export default function TicketNft() {
             Enter complete event description
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <div className="mb-3">
+                <label className="form-label " htmlFor="image">
+                  Upload Image
+                </label>
+                <input
+                  className="form-control"
+                  type={"file"}
+                  // onChange={OnChangeFile}
+                ></input>
+              </div>
+        <button type="submit" class="btn form-control btn-outline-warning">
           Submit
         </button>
       </form>

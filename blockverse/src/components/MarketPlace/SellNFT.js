@@ -190,7 +190,7 @@ export default function SellNFT() {
       <div className="mt-3 middle">
         <h3 className="p-3 rounded">Mint NFT</h3>
       </div>
-      <div className="border p-3 mt-3 border-white rounded m-auto MintDiv col-7 mb-4 form">
+      <div className="border p-3 mt-3 border-white rounded m-auto MintDiv mb-4 form">
         <form>
           <fieldset>
             {/* <legend className="p-1">Mint Your NFT</legend>
@@ -274,7 +274,10 @@ export default function SellNFT() {
                   htmlFor="flexSwitchCheckDefault"
                 >
                   SoulBound NFT
-                </label>
+                </label><br/>
+                <small id="flexSwitchCheckDefault1" className="form-text text-muted">
+                  You can't list this NFT for sell in future.
+                </small>
               </div>
 
               <div className="form-check form-switch mb-3">
@@ -307,7 +310,10 @@ export default function SellNFT() {
                 <input className={`form-control ${darkMode ? "" : "lightThemeInput"}`} type="text" id="toAddr" onChange={(e) =>
                   updateFormParams({ ...formParams, to: e.target.value })
                 }
-                  value={formParams.to} placeholder="If you want this NFT for you, then leave it blank.." />
+                  value={formParams.to} />
+                <small id="toAddr" className="form-text text-muted">
+                If you want this NFT for you, then leave it blank..
+              </small>
               </div>
               <div className="form-group mt-4">
                 <label className="form-label " htmlFor="image">
@@ -320,7 +326,7 @@ export default function SellNFT() {
                 ></input>
               </div>
             </fieldset>
-            <button onClick={listNFT} className="mt-3 btn btn-warning">
+            <button onClick={listNFT} className="mt-3 form-control btn btn-outline-warning">
               List NFT
             </button>
           </fieldset>
