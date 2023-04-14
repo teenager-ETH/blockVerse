@@ -3,7 +3,9 @@
 
 
 <hr>
-  🔗 Explore the **blockVerse** by your self: 
+
+  🔗 Explore the __blockVerse__ by your self: 
+  
 <hr>
 
 
