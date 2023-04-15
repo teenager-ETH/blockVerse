@@ -36,12 +36,12 @@ export default function NftIndexer() {
       // console.log(tokenData);
       var tokenaddr = `https://blockscan.com/address/${tokenData.contract.address}`;
       nftArray[i] = (
-        <div className="col h-100" key={tokenData.tokenId}>
+        <div className="h-100 text-center" key={tokenData.tokenId}>
           <div className="card">
             <a href={tokenData.media[0].gateway} target="_blank" rel="noreferrer">
               <img
                 src={tokenData.media[0].thumbnail}
-                className="card-img-top"
+                className="h-2"
                 alt={tokenData.media[0].gateway}
               />
             </a>
@@ -136,7 +136,7 @@ export default function NftIndexer() {
       </div>
       {loader}
       <div className="d-flex justify-content-center pt-3">{nftnftcount}</div>
-      <div className="row middle container m-3 row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-sm-2">
+      <div className="row mx-auto container row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-sm-2">
         {nftdata}
       </div>
     </>
