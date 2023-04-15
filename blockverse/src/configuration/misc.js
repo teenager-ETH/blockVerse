@@ -14,6 +14,18 @@ export function truncAddr(text) {
     return text;
 }
 
+export function truncAddr2(text) {
+    if (text.length > 11) {
+        let start = text.substring(0, 4);
+        let end = text.substring(text.length - 4, text.length);
+        while (start.length + end.length < 11) {
+            start = start + '.';
+        }
+        return start + end;
+    }
+    return text;
+}
+
 export function getDarkMode() {
     if (localStorage.getItem("darkMode") === undefined) {
         localStorage.setItem("darkMode", true);
