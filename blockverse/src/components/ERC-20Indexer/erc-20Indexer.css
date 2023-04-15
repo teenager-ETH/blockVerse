@@ -1,0 +1,9 @@
+div.indexer-form {
+    width: 55%;
+}
+
+@media only screen and (max-width: 1000px) {
+    div.indexer-form {
+        width: 95%;
+    }
+}
