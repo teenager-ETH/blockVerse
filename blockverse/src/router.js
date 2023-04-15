@@ -73,10 +73,6 @@ const router = createBrowserRouter([
   {
     path: "/ticket/create",
     element: <TicketNft/>
-  },
-  {
-    path: "/scan",
-    element: <QRScan />
   }
 ]);
 

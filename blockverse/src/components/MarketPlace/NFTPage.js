@@ -6,11 +6,13 @@ import { useState, useEffect } from "react";
 import { CenterLoader as Loader } from "../Loader/LoaderDNA";
 // import { useGlobalState } from "../../configuration/settings";
 import toast, { Toaster } from "react-hot-toast";
+import { QrReader } from 'react-qr-reader';
 
 export default function NFTPage() {
   const [itemData, setItemData] = useState({});
   const [addressForAuthority, setAddressForAuthority] = useState("");
   // const [currentAccountAddress] = useGlobalState("currentAccountAddress");
+  const [scan, setScan] = useState(false);
 
   const ethers = require("ethers");
   const params = useParams();
@@ -57,10 +59,17 @@ export default function NFTPage() {
     }
   }
 
-  async function verifyOwner() {
+  async function verifyOwner(addr, flag) {
     const toastId = toast.loading("Checking Ownership... 🤓");
     console.log("Checking ownership of : ", addressForAuthority);
-    if (!addressForAuthority) {
+    var addrToCheck = addressForAuthority
+    if(flag){
+      addr = addr.slice(0, -6); 
+      addr = addr.slice(9);
+      addrToCheck = addr
+      console.log(addr)
+    }
+    if (!addrToCheck) {
       toast.error("Invalid Wallet Address", {
         id: toastId,
       });
@@ -70,7 +79,7 @@ export default function NFTPage() {
       let contract = new ethers.Contract(NH.address, NH.abi, signer);
       //create an NFT Token
       await contract
-        .getVerificationOfAuthor(tokenId, addressForAuthority)
+        .getVerificationOfAuthor(tokenId, addrToCheck)
         .then((e) => {
           if (e) {
             toast.success("Yes, Given Wallet Address Is The Owner..🎉", {
@@ -91,6 +100,16 @@ export default function NFTPage() {
       toast.error("Something went wrong..😪", {
         id: toastId,
       });
+    }
+  }
+
+  const handleScan = (data) => {
+    if (data) {
+      setScan(false);
+      verifyOwner(data?.text, true);
+      console.log(data.text)
+    }else{
+      toast.error("Something went wrong...🤐");
     }
   }
 
@@ -185,7 +204,8 @@ export default function NFTPage() {
         {displayData}
         <Toaster position="bottom-center" reverseOrder={false} />
       </div>
-      <div className="form-group container text-center mt-4 mb-4 mx-auto m-auto">
+      <div className="form-group container text-center mt-4 mb-4 mx-auto m-auto row">
+        <div className="col-10">
         <input
           type="text"
           className="form-control p-6"
@@ -193,14 +213,45 @@ export default function NFTPage() {
           onChange={(e) => changeAddress(e)}
           placeholder="Enter Wallet Address To Verify This NFT Ownership"
         />
-        <div>
+        </div>
+        <div className="col-2">
           <button
-            className="btn btn-outline-warning mt-3"
+            className="btn btn-outline-warning"
             onClick={verifyOwner}
           >
             Verify Ownership
           </button>
         </div>
+        {!scan ?
+          <>
+            <div className='m-3'>
+              <div className='justify-content-center'>
+                <div className="mb-4 mt-1">
+                  <h4>OR</h4>
+                </div>
+                <button className='btn btn-outline-warning' onClick={() => setScan(true)}>Scan Your QR</button>
+              </div>
+            </div>
+          </>
+          :
+          <>
+            <QrReader
+            onResult={(result, error) => {
+              if (!!result) {
+                handleScan(result);
+              }
+
+              // if (!!error) {
+              //   toast.error('Error while scanning QR code...')
+              //   console.info("ERROR", error);
+              // }
+
+            }}
+            className='w-25 h-20 mx-auto'
+            />
+            <center><button className='btn btn-outline-danger w-25' onClick={() => setScan(false)}>Cancel</button></center>
+          </>
+        }
       </div>
     </>
   );
