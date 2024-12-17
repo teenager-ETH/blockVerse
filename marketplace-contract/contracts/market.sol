@@ -186,5 +186,5 @@ contract NFTHub is ERC721URIStorage {
 // address payable addr3 = payable(addr1);
 
 
-        // transfering
+        // transferring
         // _transfer(msg.sender, address(this), tokenId);
