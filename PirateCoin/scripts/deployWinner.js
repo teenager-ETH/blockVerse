@@ -39,7 +39,7 @@ async function main() {
 
   console.log(dropFunc)
 
-  console.log("succeful");
+  console.log("successful");
 
   
 
