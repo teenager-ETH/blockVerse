@@ -151,7 +151,7 @@ contract NFTHUB is ERC721URIStorage{
         // uint currentId;
         uint totalListed=0;
 
-        // checking additional fields for removeing the newer
+        // checking additional fields for removing the newer
         for(uint i=0;i<nftCount;i++)
         {
             if(idToListedToken[i+1].currentlyListed == true){
